@@ -7,7 +7,7 @@ nav_order: 1
 
 # Installing Kubernetes
 
-The firs thing we need is a container runtime. A container runtime is the system that actually creates the containers and has the technology to make all that magic happen. Kubernetes, on the other hand, just manages all the containers across devices on the runtime.
+The first thing we need is a container runtime. A container runtime is the system that actually creates the containers and has the technology to make all that magic happen. Kubernetes, on the other hand, just manages all the containers across devices on the runtime.
 
 The container runtime we will use is called ContainerD. The easiest way to do so would be to just install Docker. [Here](https://docs.docker.com/engine/install/ubuntu/) are the instructions to do so. Make sure to install it on all the worker nodes. 
 
@@ -44,4 +44,5 @@ kubeadm init --pod-network-cidr=172.31.0.196/16
 
 *Depending on your network configurations, you might want to change `--pod-network-cidr.` For most people, though, this should do the job.
 
-Initialize worker node: At the end of the execution of the kubeadm init command, there will be a long command for you to copy. Just paste that and run it on any other computer to make it a worker node. Note that you might have to change the IP address on the command.
+## Initialize worker node:
+At the end of the execution of the kubeadm init command, there will be a long command for you to copy. Just paste that and run it on any other computer to make it a worker node. If you wish to use one node as both the master and a worker, run this command on the master node.. Note that you might have to change the IP address on the command.
